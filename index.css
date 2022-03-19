@@ -1,6 +1,7 @@
 :root{
   --project-font-size: 25px;
-  --background-color: lightgray;
+  --text-background-color: lightgray;
+  --background-color: black;
 }
 html{
   font-family: lores-9-narrow, OCR A Std, courier;
@@ -34,7 +35,7 @@ a {
   margin-left: 35vw;
   margin-right: 35vw;
   display: block;
-  background-color: var(--background-color);
+  background-color: var(--text-background-color);
 }
 a:hover{
   display:block;
@@ -46,6 +47,11 @@ a:hover{
   position: absolute;
   top: 0;
   left: 0;
+  background-color: var(--background-color);
+}
+
+#canvas {
+  background-color: var(--background-color);
 }
 
 .foreground {
@@ -72,7 +78,7 @@ span:hover {
 
 @keyframes toggle {
 
-  
+
   from {border-bottom: 3px solid gray;
   color: gray;}
   to {border-bottom: none;
