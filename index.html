@@ -5,17 +5,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
-  $(document).ready(function(){
-    $(document).on('click', function() {
-      if (ignoreNextClick) {
-        ignoreNextClick = false
-        return
-      }
-      newX = mouseX
-      newY = mouseY
-      createLine(mouseX, mouseY)
-    })
-  })
+$(document).ready(function() {
+  console.log("ready");
+  $(document).mouseleave(function() {
+    mouseLeft = true;
+  });
+  $(document).mouseenter(function() {
+    mouseLeft = false;
+  });
+});
 </script>
 
 <style>
@@ -94,7 +92,7 @@
   <body>
     <div class="background" id="canvas" style="text-align:center">
     </div>
-    <div class="foreground">
+    <div class="foreground" id="foreground">
       <button type="button" id="lineClearer" onclick="clearLines();">Clear Lines</button>
       <h1 class="header">Projects</h1>
       <!-- <p>

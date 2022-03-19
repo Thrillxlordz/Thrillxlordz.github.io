@@ -4,10 +4,12 @@ let lines = []
 let numLines = 12
 let speed = 15
 let mouseBias
+// let biasWeight = 3
 let maxPoints = 100
 let maxWeight = 5
 let backgroundColor = 'lightgray'
 let ignoreNextClick = false;
+let mouseLeft = false;
 
 function setup() {
   canvasX = windowWidth
@@ -19,7 +21,7 @@ function setup() {
 }
 
 function draw() {
-  if (mouseX > 0 && mouseX < canvasX && mouseY > 0 && mouseY < canvasY) {
+  if (mouseX > 0 && mouseX < canvasX && mouseY > 0 && mouseY < canvasY && !mouseLeft) {
     mouseBias = true
   } else {
     mouseBias = false
@@ -30,13 +32,16 @@ function draw() {
     if (lines[i].points.length > maxPoints) {
       lines[i].points.splice(0, 1)
     }
-    stroke(lines[i].color)
-    strokeWeight(lines[i].weight)
     x = lines[i].points[lines[i].points.length - 1].x
     y = lines[i].points[lines[i].points.length - 1].y
     let randX = random(speed * 2) - speed
     let randY = random(speed * 2) - speed
     if (mouseBias) {
+      // let bias = createVector(mouseX - x, mouseY - y)
+      // bias.normalize()
+      // bias.mult(biasWeight)
+      // randX += bias.x
+      // randY += bias.y
       for (let j = 0; j < 2; j++) {
         let rx = random(speed * 2) - speed
         let ry = random(speed * 2) - speed
@@ -66,15 +71,17 @@ function draw() {
 
     lines[i].points.push(createVector(x, y))
 
+    stroke(lines[i].color)
+    strokeWeight(lines[i].weight)
     beginShape()
     vertex(lines[i].points[0].x, lines[i].points[0].y)
     for (let j = 1; j < lines[i].points.length; j++) {
-      if (abs(lines[i].points[j].x - lines[i].points[j - 1].x) > speed) {
+      if (abs(lines[i].points[j].x - lines[i].points[j - 1].x) > speed) {// + biasWeight) {
         endShape()
         beginShape()
         continue
       }
-      if (abs(lines[i].points[j].y - lines[i].points[j - 1].y) > speed) {
+      if (abs(lines[i].points[j].y - lines[i].points[j - 1].y) > speed) {// + biasWeight) {
         endShape()
         beginShape()
         continue
@@ -82,7 +89,22 @@ function draw() {
       vertex(lines[i].points[j].x, lines[i].points[j].y)
     }
     endShape()
+    if (mouseBias) {
+      stroke('red')
+      strokeWeight(maxWeight * 2)
+      beginShape(POINTS)
+      vertex(lines[i].points[lines[i].points.length - 1].x, lines[i].points[lines[i].points.length - 1].y)
+      endShape()
+    }
   }
+}
+
+function mouseClicked() {
+  if (ignoreNextClick) {
+    ignoreNextClick = false
+    return
+  }
+  createLine(mouseX, mouseY)
 }
 
 function createLine(x, y) {
