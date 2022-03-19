@@ -1,5 +1,6 @@
 let canvasX
 let canvasY
+let backgroundColor
 let lines = []
 let numLines = 100
 let speed = 15
@@ -7,7 +8,6 @@ let mouseBias
 // let biasWeight = 3
 let maxPoints = 100
 let maxWeight = 5
-let backgroundColor
 let ignoreNextClick = false;
 let mouseLeft = false;
 
