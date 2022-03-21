@@ -1,13 +1,13 @@
 let canvasX
 let canvasY
+let backgroundColor
 let lines = []
-let numLines = 12
+let numLines = 100
 let speed = 15
 let mouseBias
 // let biasWeight = 3
 let maxPoints = 100
 let maxWeight = 5
-let backgroundColor = 'lightgray'
 let ignoreNextClick = false;
 let mouseLeft = false;
 
@@ -16,6 +16,7 @@ function setup() {
   canvasY = windowHeight
   myCanvas = createCanvas(canvasX, canvasY)
   myCanvas.parent('canvas')
+  backgroundColor = window.getComputedStyle(document.getElementById("canvas")).getPropertyValue('background-color')
   background(backgroundColor)
   noFill()
 }

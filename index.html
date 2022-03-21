@@ -7,7 +7,6 @@
 
 <script>
 $(document).ready(function() {
-  console.log("ready");
   $(document).mouseleave(function() {
     mouseLeft = true;
   });
@@ -27,24 +26,6 @@ $(document).ready(function() {
     <div class="foreground" id="foreground">
       <button type="button" id="lineClearer" onclick="clearLines(); playSound('clear-lines')">Clear Lines</button>
       <h1 class="header">Projects<x class="blink-me">_</x></h1>
-      <!-- <p>
-        <a href="https://thrillxlordz.github.io/Crossword" target="_blank">Crossword Generator</a>
-      </p>
-      <p>
-        <a href="https://thrillxlordz.github.io/GameOfLife" target="_blank">Game of Life</a>
-      </p>
-      <p>
-        <a href="https://thrillxlordz.github.io/Minesweeper" target="_blank">Minesweeper</a>
-      </p>
-      <p>
-        <a href="https://thrillxlordz.github.io/PlanetsAndGravitySimulation" target="_blank">Planets & Gravity Simulation</a>
-      </p>
-      <p>
-        <a href="https://thrillxlordz.github.io/PrimeSpiral" target="_blank">Prime Spiral</a>
-      </p>
-      <p>
-        <a href="https://thrillxlordz.github.io" target="_blank">More Projects</a>
-      </p> -->
       <audio autoplay id="menu-clip">
         <source src="sfx_menu_move1.wav" type="audio/wav">
       </audio>
@@ -55,22 +36,22 @@ $(document).ready(function() {
         <source src="sfx_coin_double3.wav" type="audio/wav">
       </audio>
       <p>
-        <a href="file:///C:/Users/Nick/NicksProjects/Crossword/index.html" onclick="playSound('link-selected')" target="_blank"><span onmouseover="playSound('menu-clip')">Crossword Generator</span></a>
+        <a href="https://thrillxlordz.github.io/Crossword" target="_blank" onclick="playSound('link-selected')" ><span onmouseover="playSound('menu-clip')">Crossword Generator</span></a>
       </p>
       <p>
-        <a href="file:///C:/Users/Nick/NicksProjects/GameOfLife/index.html" onclick="playSound('link-selected')" target="_blank"><span onmouseover="playSound('menu-clip')">Game of Life</span></a>
+        <a href="https://thrillxlordz.github.io/GameOfLife" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Game of Life</span></a>
       </p>
       <p>
-        <a href="file:///C:/Users/Nick/NicksProjects/Minesweeper/index.html" onclick="playSound('link-selected')" target="_blank"><span onmouseover="playSound('menu-clip')">Minesweeper</span></a>
+        <a href="https://thrillxlordz.github.io/Minesweeper" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Minesweeper</span></a>
       </p>
       <p>
-        <a href="file:///C:/Users/Nick/NicksProjects/PlanetsAndGravitySimulation/index.html" onclick="playSound('link-selected')" target="_blank"><span onmouseover="playSound('menu-clip')">Planets & Gravity Simulation</span></a>
+        <a href="https://thrillxlordz.github.io/PlanetsAndGravitySimulation" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Planets & Gravity Simulation</span></a>
       </p>
       <p>
-        <a href="file:///C:/Users/Nick/NicksProjects/PrimeSpiral/index.html" onclick="playSound('link-selected')" target="_blank"><span onmouseover="playSound('menu-clip')">Prime Spiral</span></a>
+        <a href="https://thrillxlordz.github.io/PrimeSpiral" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Prime Spiral</span></a>
       </p>
       <p>
-        <a href="file:///C:/Users/Nick/NicksProjects/LandingPage/index.html" onclick="playSound('link-selected')" target="_blank"><span onmouseover="playSound('menu-clip')">More Projects</span></a>
+        <a href="https://thrillxlordz.github.io/Crossword" target="_blank"onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">More Projects</span></a>
       </p>
     </div>
   </body>
