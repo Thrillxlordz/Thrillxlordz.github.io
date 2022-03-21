@@ -25,30 +25,33 @@ $(document).ready(function() {
     </div>
     <div class="foreground" id="foreground">
       <button type="button" id="lineClearer" onclick="clearLines(); playSound('clear-lines')">Clear Lines</button>
-      <h1 class="header">Projects</h1>
+      <h1 class="header">Projects<x class="blink-me">_</x></h1>
       <audio autoplay id="menu-clip">
         <source src="sfx_menu_move1.wav" type="audio/wav">
       </audio>
       <audio autoplay id="clear-lines">
         <source src="sfx_sounds_pause7_in.wav" type="audio/wav">
       </audio>
+      <audio autoplay id="link-selected">
+        <source src="sfx_coin_double3.wav" type="audio/wav">
+      </audio>
       <p>
-        <a href="https://thrillxlordz.github.io/Crossword" target="_blank"><span onmouseover="playSound('menu-clip')">Crossword Generator</span></a>
+        <a href="https://thrillxlordz.github.io/Crossword" target="_blank" onclick="playSound('link-selected')" ><span onmouseover="playSound('menu-clip')">Crossword Generator</span></a>
       </p>
       <p>
-        <a href="https://thrillxlordz.github.io/GameOfLife" target="_blank"><span onmouseover="playSound('menu-clip')">Game of Life</span></a>
+        <a href="https://thrillxlordz.github.io/GameOfLife" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Game of Life</span></a>
       </p>
       <p>
-        <a href="https://thrillxlordz.github.io/Minesweeper" target="_blank"><span onmouseover="playSound('menu-clip')">Minesweeper</span></a>
+        <a href="https://thrillxlordz.github.io/Minesweeper" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Minesweeper</span></a>
       </p>
       <p>
-        <a href="https://thrillxlordz.github.io/PlanetsAndGravitySimulation" target="_blank"><span onmouseover="playSound('menu-clip')">Planets & Gravity Simulation</span></a>
+        <a href="https://thrillxlordz.github.io/PlanetsAndGravitySimulation" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Planets & Gravity Simulation</span></a>
       </p>
       <p>
-        <a href="https://thrillxlordz.github.io/PrimeSpiral" target="_blank"><span onmouseover="playSound('menu-clip')">Prime Spiral</span></a>
+        <a href="https://thrillxlordz.github.io/PrimeSpiral" target="_blank" onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">Prime Spiral</span></a>
       </p>
       <p>
-        <a href="https://thrillxlordz.github.io/Crossword" target="_blank"><span onmouseover="playSound('menu-clip')">More Projects</span></a>
+        <a href="https://thrillxlordz.github.io/Crossword" target="_blank"onclick="playSound('link-selected')"><span onmouseover="playSound('menu-clip')">More Projects</span></a>
       </p>
     </div>
   </body>

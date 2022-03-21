@@ -76,6 +76,10 @@ span:hover {
   border-bottom: 3px solid transparent;
 }
 
+.blink-me{
+  animation: blinker 1s linear infinite;
+}
+
 @keyframes toggle {
 
 
@@ -83,4 +87,10 @@ span:hover {
   color: gray;}
   to {border-bottom: none;
   color: gray;}
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
